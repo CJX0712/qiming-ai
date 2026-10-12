@@ -1,0 +1,67 @@
+{
+  "corpus_docs": 25,
+  "chunks": 25,
+  "backends": {
+    "chunker": "langchain-text-splitters",
+    "embedder": "fastembed(BAAI/bge-small-zh-v1.5)",
+    "vectorstore": "faiss(IndexFlatIP)",
+    "sparse": "rank_bm25",
+    "reranker": "fastembed-cross-encoder(BAAI/bge-reranker-base)",
+    "llm": "mock-extractive-v1"
+  },
+  "config": {
+    "chunk": {
+      "chunk_size": 400,
+      "chunk_overlap": 80
+    },
+    "embed": {
+      "backend": "auto",
+      "model": "BAAI/bge-small-zh-v1.5"
+    },
+    "index": {
+      "backend": "auto",
+      "hnsw": false
+    },
+    "retrieve": {
+      "top_k": 20,
+      "rerank_top_n": 4,
+      "rrf_k": 60,
+      "reranker_backend": "auto",
+      "reranker_model": "BAAI/bge-reranker-base"
+    },
+    "llm": {
+      "backend": "mock",
+      "model": "deepseek-chat",
+      "base_url": "https://api.deepseek.com",
+      "api_key": "",
+      "temperature": 0.1,
+      "max_tokens": 1024
+    },
+    "verify": {
+      "min_coverage": 0.6,
+      "support_threshold": 0.35
+    }
+  },
+  "ingest_ms": 246.4,
+  "retrieval": {
+    "hit@1": 0.9444,
+    "hit@4": 1.0,
+    "mrr": 0.9722,
+    "n_answerable": 18
+  },
+  "verification": {
+    "answered_with_evidence_rate": 1.0,
+    "abstention_rate": 1.0,
+    "n_unanswerable": 3
+  },
+  "latency_ms": {
+    "dense_ms": 5.2,
+    "sparse_ms": 0.4,
+    "fuse_ms": 0.0,
+    "rerank_ms": 1215.7,
+    "n_candidates": 22.6,
+    "generate_ms": 0.1,
+    "verify_ms": 73.1,
+    "total_ms": 1294.7
+  }
+}

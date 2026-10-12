@@ -1,0 +1,21 @@
+{"question": "如何重置登录密码？", "expected": ["faq-password-reset"]}
+{"question": "密码输错太多次被锁定了怎么办？", "expected": ["faq-password-reset"]}
+{"question": "数据导出支持哪些格式？", "expected": ["faq-data-export"]}
+{"question": "导出任务完成了怎么收到通知？", "expected": ["faq-data-export"]}
+{"question": "API 调用频率有限制吗？", "expected": ["faq-api-ratelimit"]}
+{"question": "收到 429 错误是什么意思？", "expected": ["faq-api-ratelimit"]}
+{"question": "怎么配置单点登录？", "expected": ["faq-sso"]}
+{"question": "SSO 支持哪些协议？", "expected": ["faq-sso"]}
+{"question": "审计日志保留多久？", "expected": ["faq-audit-log"]}
+{"question": "数据备份策略是什么？", "expected": ["faq-backup"]}
+{"question": "专业版多少钱一个月？", "expected": ["faq-pricing"]}
+{"question": "v3.2 版本有哪些更新？", "expected": ["release-v32"]}
+{"question": "如何设置 Slack 通知？", "expected": ["faq-slack"]}
+{"question": "Webhook 签名怎么验证？", "expected": ["faq-webhook"]}
+{"question": "项目归档后还能恢复吗？", "expected": ["faq-archive"]}
+{"question": "企业版的 SLA 是多少？", "expected": ["faq-sla"]}
+{"question": "移动端支持离线使用吗？", "expected": ["faq-mobile"]}
+{"question": "怎么申请发票？", "expected": ["faq-invoice"]}
+{"question": "如何驾驶宇宙飞船？", "expected": [], "expected_abstain": true}
+{"question": "珠穆朗玛峰的海拔是多少？", "expected": [], "expected_abstain": true}
+{"question": "怎么做红烧肉？", "expected": [], "expected_abstain": true}

@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qiming-ai"
+version = "0.1.0"
+description = "Qiming Verifiable RAG: hybrid retrieval + cross-encoder rerank + faithfulness verification + abstention, built on world-class open-source components"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "晨星" }]
+keywords = [
+    "rag",
+    "retrieval-augmented-generation",
+    "verifiable-ai",
+    "fastembed",
+    "faiss",
+    "bm25",
+    "rerank",
+    "faithfulness",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# 硬依赖全部为纯 Python 包，保证任何环境可安装、可运行。
+dependencies = [
+    "numpy>=1.24",
+    "rank-bm25>=0.2.2",
+    "langchain-text-splitters>=0.2.0",
+    "openai>=1.40",
+]
+
+[project.optional-dependencies]
+# SOTA 语义嵌入（ONNX，无需 GPU / torch）
+embed = ["fastembed>=0.4.0"]
+# SOTA 向量索引
+index = ["faiss-cpu>=1.8.0"]
+# HTTP 服务
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+qiming = "qiming.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/CJX0712/qiming-ai"
+Documentation = "https://github.com/CJX0712/qiming-ai/blob/main/README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
